@@ -1,0 +1,9 @@
+export { BookAbout } from './about';
+export { BookCard } from '../../main-page/sub-pages/books/books-items/card';
+export { BookContent } from './content';
+export { BookDetailed } from './detailed';
+export { BookInfo } from './info';
+export { BookRating } from './rating';
+export { BookReviews } from './reviews';
+export { BookReview } from './review';
+export { BookUrl } from './url';
