@@ -15,13 +15,14 @@ export const customValidate = (value: string, rules?: RulesType) => {
   return test?.filter((el) => el !== true);
 };
 
-export const spanSeparator = (text?: string, searchText?: Array<string | true>) =>
-  searchText?.map((separator) => {
-    const regex = new RegExp(`(${separator})`, 'g');
+export const spanSeparator = (text: string, searchText: Array<string | true>) => {
+    const regex = new RegExp(`(${searchText?.at(0)})|(${searchText?.at(1)})|(${searchText?.at(2)})`, 'g');
 
     return text?.split(regex).map((el, index) => {
       const keys = index.toString();
 
-      return regex.test(el) ? <span key={keys}>{el}</span> : el;
+      return searchText.includes(el) ? <span key={keys}>{el}</span> : el;
     });
-  });
+
+};
+

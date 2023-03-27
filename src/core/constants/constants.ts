@@ -1,3 +1,5 @@
+import { PathsToPage } from '@core/constants/router';
+
 export const searchTextDef = 'Поиск книги или автора…';
 export const localKeyText = 'text';
 export const noRating = 'ещё нет оценок';
@@ -39,17 +41,17 @@ export const registrationForm = {
   steps: [
     {
       inputFirst: {
-        name: 'login',
+        name: 'username',
         title: 'Придумайте логин для входа',
         subTitle: errors.login,
         patterns: [
-          { regExp: /[A-z]/, error: 'латинский алфавит' },
+          { regExp: /[a-zA-Z]/, error: 'латинский алфавит' },
           { regExp: /\d/, error: 'цифры' },
         ],
         rules: {
           required: errors.empty,
           pattern: {
-            value: /[A-z]+\d/,
+            value: /^[a-zA-Z0-9]+$/,
             message: errors.login,
           },
         },
@@ -125,7 +127,7 @@ export const registrationForm = {
 export const authorizationForm = {
   title: 'Вход в личный кабинет',
   inputFirst: {
-    name: 'login',
+    name: 'identifier',
     title: 'Логин',
     rules: { required: errors.empty },
   },
@@ -155,5 +157,41 @@ export const recoveryForm = {
     primary: 'Восстановить',
     secondary: authorizationForm.buttons.secondary,
     join: authorizationForm.buttons.join,
+  },
+};
+
+export const registrationSuccess = {
+  title: 'Регистрация успешна',
+  subTitle: 'Регистрация прошла успешно. Зайдите в личный кабинет, используя свои логин и пароль',
+  button: {
+    title: 'вход',
+    url: PathsToPage.Authorization,
+  },
+};
+
+export const registrationErrorUnique = {
+  title: 'Данные не сохранились',
+  subTitle: 'Такой логин или e-mail уже записан в системе. Попробуйте зарегистрироваться по другому логину или e-mail.',
+  button: {
+    title: 'назад к регистрации',
+    url: PathsToPage.Registry,
+  },
+};
+
+export const registrationError = {
+  title: registrationErrorUnique.title,
+  subTitle: 'Что-то пошло не так и ваша регистрация не завершилась. Попробуйте ещё раз',
+  button: {
+    title: 'повторить',
+    url: PathsToPage.Registry,
+  },
+};
+
+export const authorizationError = {
+  title: 'Вход не выполнен',
+  subTitle: 'Что-то пошло не так. Попробуйте ещё раз',
+  button: {
+    title: registrationError.button.title,
+    url: PathsToPage.Authorization,
   },
 };

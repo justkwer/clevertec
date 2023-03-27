@@ -11,7 +11,7 @@ export const Link = css`
 `;
 
 export const Active = css`
-  background: ${({ theme }) => theme.gradient};
+  background: ${({ theme }) => theme.gradient.primary};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

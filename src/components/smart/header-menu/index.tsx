@@ -1,4 +1,4 @@
-import { BurgerMenu, Error, Loading, Logo, PageName, Person } from '@components';
+import { BurgerMenu, Error, Logo, PageName, Person } from '@components';
 
 import { HeaderMenuStyled } from './styled';
 
@@ -8,7 +8,6 @@ export const HeaderMenu = () => (
     <BurgerMenu />
     <PageName />
     <Person />
-    <Loading />
     <Error />
   </HeaderMenuStyled>
 );

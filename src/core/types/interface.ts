@@ -81,3 +81,50 @@ export type CommentsProp = {
     avatarUrl: string;
   };
 };
+
+export interface RegistryRequest {
+  email: string;
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+}
+
+export interface RegisterResponse {
+  jwt: string;
+  user: {
+    id: number;
+    username: string;
+    email: string;
+    provider: string;
+    confirmed: boolean;
+    blocked: boolean;
+    createdAt: string;
+    updatedAt: string;
+    firstName: string;
+    lastName: string;
+    phone: string;
+  };
+}
+
+export interface RegisterError {
+  data: null;
+  error: {
+    status: number;
+    name: string;
+    message: string;
+    details: object;
+  };
+}
+
+export interface AuthRequest {
+  identifier: string;
+  password: string;
+}
+
+export interface PasswordResetRequest {
+  password: string;
+  passwordConfirmation: string;
+  code: string;
+}

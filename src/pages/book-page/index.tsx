@@ -36,9 +36,7 @@ export const BookPage = () => {
             <BookRating rating={rating} />
             <BookContent {...prop} categories={categories} issueYear={issueYear} />
             <BookReviews comments={comments} />
-            <Button active={true} data-test-id='button-rating'>
-              {feedbackBtn}
-            </Button>
+            <Button data-test-id='button-rating'>{feedbackBtn}</Button>
           </Fragment>
         )}
       </Section>

@@ -6,9 +6,7 @@ import { RegistrationButtonsProp } from '@core/types';
 
 export const RegistrationButtons: FC<RegistrationButtonsProp> = ({ stepButton, subTitle, subButton, redirect }) => (
   <RegistrationButtonsStyled>
-    <Button active={true} typeButton='submit'>
-      {stepButton}
-    </Button>
+    <Button typeButton='submit'>{stepButton}</Button>
     <div>
       <span>{subTitle}</span>
       <FormButtonStyled to={redirect}>

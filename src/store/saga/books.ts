@@ -1,7 +1,7 @@
 import { call, fork, put, takeEvery } from 'redux-saga/effects';
 import { api } from '@core/api';
 import { BookItems, Categories } from '@core/types';
-import { addBooks, addCategories, GET_API_BOOKS, toggleError, toggleLoading } from '@store/reducers/books';
+import { addBooks, addCategories, GET_API_BOOKS, toggleError, toggleLoading } from '@store/reducers';
 import { AxiosResponse } from 'axios';
 
 export function* addBooksWorker() {

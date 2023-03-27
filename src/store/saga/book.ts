@@ -1,8 +1,7 @@
 import { call, put } from 'redux-saga/effects';
 import { api } from '@core/api';
 import { BookItem } from '@core/types';
-import { addBook } from '@store/reducers/book';
-import { toggleError, toggleLoading } from '@store/reducers/books';
+import { addBook, toggleError, toggleLoading } from '@store/reducers';
 import { AxiosResponse } from 'axios';
 
 export function* getBookWorker(action: { payload: string }) {

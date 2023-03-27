@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ButtonStyled = styled.button<{ active?: boolean }>`
   padding: ${({ active }) => (active ? '8px 23px' : '7px 25px')};
-  background: ${({ active, theme }) => (active ? theme.gradient : theme.colors.greyBlack)};
+  background: ${({ active, theme }) => (active ? theme.gradient.primary : theme.colors.greyBlack)};
   border-radius: 20px;
   font-weight: ${({ theme }) => theme.fonts.weight.secondary};
   font-size: 0.75rem;
@@ -10,6 +10,14 @@ export const ButtonStyled = styled.button<{ active?: boolean }>`
   text-transform: uppercase;
   color: ${({ active, theme }) => (active ? theme.colors.white : theme.colors.greyBlack40)};
   border: ${({ active, theme }) => !active && `1px solid ${theme.colors.greyBlack40}`};
+
+  &:hover {
+    background: ${({ active, theme }) => (active ? theme.gradient.hover : theme.colors.greyBlack)};
+  }
+
+  &:active {
+    background: ${({ active, theme }) => (active ? theme.gradient.pressed : theme.colors.greyBlack)};
+  }
 
   @media (max-width: ${({ theme }) => theme.media.medium}) {
     padding: ${({ active }) => (active ? '11px 68px' : '11px 66px')};

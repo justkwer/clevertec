@@ -1,6 +1,6 @@
 import createSagaMiddleware from 'redux-saga';
 import { configureStore } from '@reduxjs/toolkit';
-import { book, books, form, person } from '@store/reducers';
+import { auth, book, books, form } from '@store/reducers';
 import { rootSaga } from '@store/saga';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -10,7 +10,7 @@ export const store = configureStore({
     form,
     books,
     book,
-    person,
+    auth,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
 });

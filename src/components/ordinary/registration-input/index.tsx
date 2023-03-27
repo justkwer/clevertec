@@ -22,7 +22,7 @@ export const RegistrationInput: FC<PropsWithChildren<RegistrationInputProp>> = (
     if (value) {
       const validate = customValidate(value, patterns);
 
-      return validate?.length === 0 ? subTitle : spanSeparator(subTitle, validate);
+      return validate?.length === 0 ? subTitle : spanSeparator(subTitle as string, validate as string[]);
     }
 
     return subTitle;
@@ -34,10 +34,13 @@ export const RegistrationInput: FC<PropsWithChildren<RegistrationInputProp>> = (
         <input
           type={hidden ? 'password' : 'text'}
           placeholder={title}
-          {...register(name, { ...rules, onChange: (e) => setValue(e.target.value) })}
+          {...register(name as 'login' | 'password' | 'firstName' | 'lastName' | 'phone' | 'email', {
+            ...rules,
+            onChange: (e) => setValue(e.target.value),
+          })}
         />
         <label>{title}</label>
-        {!errorMessage && value && <ValidationTrue />}
+        {!errorMessage && value && !Array.isArray(validHelper) && <ValidationTrue />}
         {children}
       </InputStyled>
       <hr />

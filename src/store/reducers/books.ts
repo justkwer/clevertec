@@ -33,9 +33,6 @@ export const booksSlice = createSlice({
   },
 });
 
-export const { addBooks } = booksSlice.actions;
-export const { addCategories } = booksSlice.actions;
-export const { toggleError } = booksSlice.actions;
-export const { toggleLoading } = booksSlice.actions;
+export const { addBooks, addCategories, toggleError, toggleLoading } = booksSlice.actions;
 export const getApiBooks = () => ({ type: GET_API_BOOKS });
 export const books = booksSlice.reducer;

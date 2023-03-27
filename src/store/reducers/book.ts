@@ -21,7 +21,6 @@ export const bookSlice = createSlice({
   },
 });
 
-export const { addBook } = bookSlice.actions;
-export const { idTransfer } = bookSlice.actions;
+export const { addBook, idTransfer } = bookSlice.actions;
 export const getApiBook = () => ({ type: GET_API_BOOK });
 export const book = bookSlice.reducer;

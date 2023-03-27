@@ -11,10 +11,21 @@ export type {
   BookState,
   BookContentProp,
   DateOptions,
-  PersonState,
+  AuthState,
   RegistrationInputProp,
   RegistrationButtonsProp,
   RulesType,
+  FormMessageProp,
 } from './types';
 
-export type { BookItems, BookItem, CommentsProp, Categories } from './interface';
+export type {
+  BookItems,
+  BookItem,
+  CommentsProp,
+  Categories,
+  RegistryRequest,
+  RegisterResponse,
+  RegisterError,
+  AuthRequest,
+  PasswordResetRequest,
+} from './interface';

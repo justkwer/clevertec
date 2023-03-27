@@ -6,7 +6,7 @@ export const ButtonCircleStyled = styled.button<{ isActive: boolean }>`
   padding: 9.5px;
   border-radius: 50%;
   box-shadow: ${({ theme }) => theme.shadow.primary};
-  background: ${({ isActive, theme }) => (isActive ? theme.gradient : theme.colors.white)};
+  background: ${({ isActive, theme }) => (isActive ? theme.gradient.primary : theme.colors.white)};
 
   svg {
     fill: ${({ isActive, theme }) => (isActive ? theme.colors.white : theme.colors.greyBlack40)};

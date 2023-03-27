@@ -4,6 +4,7 @@ export { RegistrationButtons } from './ordinary/registration-buttons';
 export { RegistrationInput } from './ordinary/registration-input';
 export { RegistrationTitle } from './ordinary/registration-title';
 export { Signature } from './simple/signature';
+export { FormMessage } from './simple/form-message';
 export { Separator } from './simple/separator';
 export { PageName } from './simple/page-name';
 export { Person } from './smart/person';

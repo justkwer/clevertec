@@ -1,18 +1,28 @@
 import { MouseEvent, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { ButtonEye, RegistrationButtons, RegistrationInput, RegistrationTitle } from '@components';
 import { authorizationForm, PathsToPage } from '@core/constants';
+import { AuthRequest } from '@core/types';
+import { InputValues } from '@core/types/types';
 import { AuthorizationStyled } from '@pages/authorization-page/authorization/styled';
+import { authTransfer } from '@store/reducers';
 
 export const Authorization = () => {
   const [hidden, setHidden] = useState(true);
   const { title, inputFirst, inputSecond, buttons } = authorizationForm;
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<InputValues>({
     mode: 'onBlur',
+    defaultValues: {
+      identifier: '',
+      password: '',
+    },
   });
 
   const handleHidden = (e: MouseEvent<HTMLButtonElement>) => {
@@ -20,8 +30,8 @@ export const Authorization = () => {
     setHidden(!hidden);
   };
 
-  const onSubmit = (data: object) => {
-    console.log(data);
+  const onSubmit = (data: FieldValues) => {
+    dispatch(authTransfer(data as AuthRequest));
   };
 
   return (

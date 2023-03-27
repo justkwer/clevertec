@@ -3,8 +3,8 @@ import { ButtonProp } from '@core/types';
 
 import { ButtonStyled } from './styled';
 
-export const Button: FC<PropsWithChildren<ButtonProp>> = ({ children, active, typeButton }) => (
-  <ButtonStyled active={active} disabled={!active} type={typeButton ?? 'button'}>
+export const Button: FC<PropsWithChildren<ButtonProp>> = ({ children, active, typeButton, onClick }) => (
+  <ButtonStyled active={active ?? true} disabled={active} type={typeButton ?? 'button'} onClick={onClick}>
     {children}
   </ButtonStyled>
 );

@@ -1,7 +1,6 @@
 import { MouseEvent, MouseEventHandler } from 'react';
-import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
+import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import { BookItem, BookItems, Categories } from '@core/types';
-import * as regexpp from 'regexpp';
 
 export type SubPageProp = {
   title: string;
@@ -37,6 +36,7 @@ export type ButtonCircleProp = {
 export type ButtonProp = {
   active?: boolean;
   typeButton?: 'submit';
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
 export type BookInfoProp = {
@@ -82,8 +82,8 @@ export type DateOptions = {
   year?: 'numeric' | string;
 };
 
-export type PersonState = {
-  name?: string;
+export type AuthState = {
+  error: FormMessageProp | undefined;
 };
 
 export type RegistrationInputProp = {
@@ -104,9 +104,19 @@ export type RegistrationInputProp = {
   hidden?: boolean;
   isLink?: boolean;
   inputForm: {
-    register: UseFormRegister<FieldValues>;
+    register: UseFormRegister<InputValues>;
     errors: FieldErrors;
   };
+};
+
+export type InputValues = {
+  identifier?: string;
+  login?: string;
+  password?: string;
+  firstName?: string;
+  lastName?: string;
+  phone?: string;
+  email?: string;
 };
 
 export type InputProp = {
@@ -131,3 +141,12 @@ export type RulesType = Array<{
   regExp: RegExp;
   error: string;
 }>;
+
+export type FormMessageProp = {
+  title: string;
+  subTitle: string;
+  button: {
+    title: string;
+    url: string;
+  };
+};

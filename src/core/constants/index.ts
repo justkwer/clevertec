@@ -13,4 +13,8 @@ export {
   registrationForm,
   authorizationForm,
   recoveryForm,
+  registrationSuccess,
+  registrationErrorUnique,
+  registrationError,
+  authorizationError,
 } from './constants';
