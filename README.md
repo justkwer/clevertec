@@ -1,4 +1,4 @@
-## <img src="https://raw.githubusercontent.com/justkwer/clevertec/develop/public/favicon.ico" width="30" height="25" /> [Clevertec](https://clevertec.netlify.app/)
+## <img src="https://raw.githubusercontent.com/justkwer/clevertec/develop/public/favicon.ico" width="30" height="25" /> [Clevertec](https://clevertec.netlify.app/) - не работает (Ошибка CORS). Сервер АPI запредил доступ (даже по токену). Если будет время напишу свой сервер.
 
 #### Проект разработан в целях демонстрации и практичекского применения моих навыков через разработку данного сайта
 
